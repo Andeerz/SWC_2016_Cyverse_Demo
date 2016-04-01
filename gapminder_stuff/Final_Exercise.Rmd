@@ -1,0 +1,34 @@
+---
+title: "Final Exercise for Software Carpentry Workshop"
+author: "Andrés Morera"
+date: "April 1, 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+**Exercise Instructions:**
+
+Take a look at the gapminder data, and pick three countries you are interested in.  Write an Rmd script to load the data file, select all the data fr that country (hint: use subset() function or dplyr), and use plot() to make three scatter plots (one for each country) that has year on the x-axis and GDP on the y-axis.  Label axes and give the graph a title.  Make sure you load all the libraries you might need.  Describe any trends you see for each country using markdown text.
+
+**Procedure:**
+
+1. Load the libraries I might need. 
+
+```{r} 
+library("dplyr", lib.loc="~/R/x86_64-pc-linux-gnu-library/3.2")
+```
+
+2. Get the data into an object I can actually use.
+
+```{r}
+gap.data <- read.csv(file = "/home/andeerz/Desktop/SWC_2016_Cyverse_Demo/gapminder_stuff/gapminder.csv")
+
+```
+
+3. Get the th
+
+plot(gap.data$year[gap.data$country %in% c("Spain","Mongolia","Zimbabwe")], gap.data$gdpPercap[gap.data$country %in% c("Spain","Mongolia","Zimbabwe")], main= "Per Capita GDP of Three Interesting Countries!", xlab= "Year", ylab= "Per Capita GDP ($US)", col= c("red", "blue", "green"))
+
+
